@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Books Api</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <style>
+        .result{
+            text-align: center;
+            margin: 20px;
+            padding: 5px;
+            border: 2px solid orangered;
+            border-radius: 10px;
+            width: 50%;
+        }
+    </style>
 </head>
 <body >
     <h3 class="text-success mt-4 text-center">Search Your Favourite Books Now!!!</h3>
@@ -17,7 +27,7 @@
 
 
       <!--Display Result Card-->
-      <div id="result-found"></div>
+      <div id="result-found" class="text-bold mx-auto"></div>
       <div id="search-result"class="row row-cols-1 row-cols-md-3 g-4">
 
         <div class="col">

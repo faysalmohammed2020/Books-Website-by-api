@@ -14,17 +14,23 @@ const displayResult = docs => {
     console.log(docs);
     
     const searchResult = document.getElementById('search-result');
+    const resultFound = document.getElementById('result-found');
     searchResult.textContent = '';
     docs.forEach(doc => {
+        resultFound.classList.add('result');
+        resultFound.innerHTML=`<h2>Total Books Found: ${docs.length}</h2>`;
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `
+        
         <div class="card h-100 w-75 mx-auto">
+        
         
             <img src="https://covers.openlibrary.org/b/id/${doc.cover_i}-M.jpg" class="card-img-top w-100" alt="...">
             <div class="card-body">
               
               
+
               <h5 class="card-title">${doc.title}</h5>
               <p class="card-text text-danger">Author Name : ${doc.author_name}</p>
               <p class="card-text">Publish Year and Month : ${doc.publish_date}</p>
