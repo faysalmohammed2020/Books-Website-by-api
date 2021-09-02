@@ -1,49 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Books Api</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <style>
-        .result{
-            text-align: center;
-            margin: 20px;
-            padding: 5px;
-            border: 2px solid orangered;
-            border-radius: 10px;
-            width: 50%;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Books Api</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <style>
+    .result {
+      text-align: center;
+      margin: 20px;
+      padding: 5px;
+      border: 2px solid orangered;
+      border-radius: 10px;
+      width: 50%;
+    }
+  </style>
 </head>
-<body >
-    <h3 class="text-success mt-4 text-center">Search Your Favourite Books Now!!!</h3>
-    <!--Search Books-->
-    <div class="input-group mb-3 w-50 mx-auto ">
-        <input id="search-field"type="text" class="form-control" placeholder="Search Your Books By Name" aria-label="Recipient's username" aria-describedby="button-addon2">
-        <button onclick="searchBooks()"class="btn btn-outline-primary" type="button" id="button-addon2">Search</button>
-      </div>
+
+<body>
+  <div class="result mx-auto">
+    <h2>Welcome to Open Books Library</h2>
+  </div>
+  <h3 class="text-success mt-4 text-center">Search Your Favourite Books Now!!!</h3>
+  <!--Search Books-->
+  
+  <div class="input-group mb-3 w-50 mx-auto ">
+    <input id="search-field" type="text" class="form-control" placeholder="Search Your Books By Name"
+      aria-label="Recipient's username" aria-describedby="button-addon2">
+    <button onclick="searchBooks()" class="btn btn-outline-primary" type="button" id="button-addon2">Search</button>
+  </div>
 
 
-      <!--Display Result Card-->
-      <div id="result-found" class="text-bold mx-auto"></div>
-      <div id="search-result"class="row row-cols-1 row-cols-md-3 g-4">
+  <!--Display Result Card-->
+  <div id="result-found" class="text-bold mx-auto"></div>
+  <div id="search-result" class="row row-cols-1 row-cols-md-3 g-4">
 
-        <div class="col">
-          <div class="card h-100">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-          </div>
+    <div class="col">
+      <div class="card h-100 w-75 mx-auto">
+        <img src="images/8.jpg" class="card-img-top w-100" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Ethan's Choice
+          </h5>
+          <p class="card-text text-danger">Author Name : Lily Java
+
+          </p>
+          <p class="card-text">Publish Year and Month : Oct 23, 2019
+
+          </p>
         </div>
-        
       </div>
-      
+    </div>
+    <div class="col">
+      <div class="card h-100 w-75 mx-auto">
+        <img src="images/7.jpg" class="card-img-top w-100" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Hello, hello, hello</h5>
+          <p class="card-text text-danger">Author Name : Jan McPherson</p>
+          <p class="card-text">Publish Year and Month : 1996
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-    <script src="js/api.js"></script>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 w-75 mx-auto">
+        <img src="images/6.jpg" class="card-img-top w-100" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Javascript</h5>
+          <p class="card-text text-danger">Author Name : Gary B. Shelly,Thomas J. Cashman,William J. Dorin,Jeffrey J. Quasney</p>
+          <p class="card-text">Publish Year and Month : 2001,August 11, 2000
+
+
+
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 w-75 mx-auto">
+        <img src="images/4.jpg" class="card-img-top w-100" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">C++ programming</h5>
+          <p class="card-text text-danger">Author Name : Larry Ullman,Andreas Signer</p>
+          <p class="card-text">Publish Year and Month : 2007,December 16, 2005,2005,2006
+
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 w-75 mx-auto">
+        <img src="images/3.jpg" class="card-img-top w-100" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">HTML</h5>
+          <p class="card-text text-danger">Author Name : Wendy Willard</p>
+          <p class="card-text">Publish Year and Month : 2001,November 15, 2000,2009,2007,November 21, 2002,2003,September 25, 2006
+
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 w-75 mx-auto">
+        <img src="images/5.jpg" class="card-img-top w-100" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">C programming in 12 easy lessons</h5>
+          <p class="card-text text-danger">Author Name : Greg M. Perry
+
+          </p>
+          <p class="card-text">Publish Year and Month : 1994
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
+  </script>
+  <script src="js/api.js"></script>
 </body>
+
 </html>
