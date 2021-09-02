@@ -1,55 +1,53 @@
- document.getElementById('error-message').style.display = 'none';
- const toggleSpinner = displayStyle =>{
+document.getElementById('error-message').style.display = 'none';
+const toggleSpinner = displayStyle => {
     document.getElementById('spinner').style.display = displayStyle;
 }
- const toggleResult = displayStyle =>{
+const toggleResult = displayStyle => {
     document.getElementById('search-result').style.display = displayStyle;
 }
- 
- const searchBooks = () => {
-     const searchField = document.getElementById('search-field');
-     const searchText = searchField.value;
+//seachbooks function 
+const searchBooks = () => {
+    const searchField = document.getElementById('search-field');
+    const searchText = searchField.value;
 
-     // console.log(searchText);
-    //  const toggleSpinner = displayStyle =>{
-    //     document.getElementById('spinner').style.display = displayStyle;
-    // }
-     
-     document.getElementById('error-message').style.display = 'none';
-     const url = `https://openlibrary.org/search.json?q=${searchText}`;
-     
-     //error handling
-     if (searchField.value === "") {
-         document.getElementById('error-message').style.display = 'block';
 
-     }
-     
-     else {
-         fetch(url)
-             .then(res => res.json())
-             .then(data => displayResult(data.docs))
-     }
-     searchField.value = '';
-     toggleSpinner('block');
-      toggleResult('none');
-    
- }
- const displayError = error => {
-     document.getElementById('error-message').style.display = 'block';
- }
- 
- const displayResult = docs => {
-     console.log(docs);
+    //error display design
+    document.getElementById('error-message').style.display = 'none';
 
-     const searchResult = document.getElementById('search-result');
-     const resultFound = document.getElementById('result-found');
-     searchResult.textContent = '';
-     docs.forEach(doc => {
-         resultFound.classList.add('result');
-         resultFound.innerHTML = `<h2>Total Books Found: ${docs.length}</h2>`;
-         const div = document.createElement('div');
-         div.classList.add('col');
-         div.innerHTML = `
+    const url = `https://openlibrary.org/search.json?q=${searchText}`;
+
+    //error handling
+    if (searchField.value === "") {
+        document.getElementById('error-message').style.display = 'block';
+
+    } else {
+        fetch(url)
+            .then(res => res.json())
+            .then(data => displayResult(data.docs))
+    }
+    searchField.value = '';
+    toggleSpinner('block');
+    toggleResult('none');
+
+}
+//error display
+const displayError = error => {
+    document.getElementById('error-message').style.display = 'block';
+}
+
+//Result Display Function
+const displayResult = docs => {
+    console.log(docs);
+
+    const searchResult = document.getElementById('search-result');
+    const resultFound = document.getElementById('result-found');
+    searchResult.textContent = '';
+    docs.forEach(doc => {
+        resultFound.classList.add('result');
+        resultFound.innerHTML = `<h2>Total Books Found: ${docs.length}</h2>`;
+        const div = document.createElement('div');
+        div.classList.add('col');
+        div.innerHTML = `
         
         <div class="card h-100 w-75 mx-auto">
         
@@ -65,10 +63,12 @@
             </div>
           </div>
         `;
-         searchResult.appendChild(div);
-         
-     });
-     toggleSpinner('none');
-      toggleResult('flex');
-     
- }
+        searchResult.appendChild(div);
+
+    });
+
+    //spinner hide and result display
+    toggleSpinner('none');
+    toggleResult('flex');
+
+}

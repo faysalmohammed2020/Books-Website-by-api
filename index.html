@@ -9,7 +9,6 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
   <style>
-    
     .result {
       text-align: center;
       margin: 20px;
@@ -18,27 +17,30 @@
       border-radius: 10px;
       width: 50%;
     }
-    .myclass{
+
+    .myclass {
       margin-right: 5px;
       padding: 3px;
-    border: 2px solid red;
-    border-radius: 5px;
-    width: 50%;
-    margin-left: 350px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+      border: 2px solid red;
+      border-radius: 5px;
+      width: 50%;
+      margin-left: 350px;
+      margin-top: 50px;
+      margin-bottom: 50px;
     }
-    .my-spinner {
-    margin-left: 650px;
-    margin-top: 200px;
-    padding: 20px;
-  
-}
-#spinner{
-  display: none;
-  
 
-}
+    .my-spinner {
+      margin-left: 650px;
+      margin-top: 200px;
+      padding: 20px;
+
+    }
+
+    #spinner {
+      display: none;
+
+
+    }
   </style>
 </head>
 
@@ -47,27 +49,22 @@
     <h2>Welcome to Open Books Library</h2>
     <h5 class="text-success mt-4 text-center">Search Your Favourite Books Now!!!</h5>
   </div>
-  
+
   <!--Search Books-->
-  
+
   <div class="input-group mb-3 w-50 mx-auto ">
     <input id="search-field" type="text" class="form-control" placeholder="Search Your Books By Name"
       aria-label="Recipient's username" aria-describedby="button-addon2">
     <button onclick="searchBooks()" class="btn btn-outline-primary " type="button" id="button-addon2">Search</button>
   </div>
-<!--Spinner Start-->
-  <!-- <div id="spinner" class="spinner-border text-info my-spinner" role="status">
-    <span class="visually-hidden ">Loading...</span>
 
-
-  </div> -->
   <button id="spinner" class="btn btn-primary my-spinner" type="button" disabled>
     <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
     Loading...
   </button>
   <!--Spinner End-->
-  
-  <!--Display Result Card-->
+
+  <!--Display Result Card and Default Cards-->
   <div id="result-found" class="text-bold mx-auto"></div>
   <div class="">
     <h5 id="error-message" class="text-danger text-center myclass"> Search Field Cannot Be Empty</h5>
@@ -106,7 +103,8 @@
         <img src="images/6.jpg" class="card-img-top w-100" alt="...">
         <div class="card-body">
           <h5 class="card-title">Javascript</h5>
-          <p class="card-text text-danger">Author Name : Gary B. Shelly,Thomas J. Cashman,William J. Dorin,Jeffrey J. Quasney</p>
+          <p class="card-text text-danger">Author Name : Gary B. Shelly,Thomas J. Cashman,William J. Dorin,Jeffrey J.
+            Quasney</p>
           <p class="card-text">Publish Year and Month : 2001,August 11, 2000
 
 
@@ -133,7 +131,8 @@
         <div class="card-body">
           <h5 class="card-title">HTML</h5>
           <p class="card-text text-danger">Author Name : Wendy Willard</p>
-          <p class="card-text">Publish Year and Month : 2001,November 15, 2000,2009,2007,November 21, 2002,2003,September 25, 2006
+          <p class="card-text">Publish Year and Month : 2001,November 15, 2000,2009,2007,November 21,
+            2002,2003,September 25, 2006
 
           </p>
         </div>
