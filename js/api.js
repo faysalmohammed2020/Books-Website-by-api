@@ -1,9 +1,19 @@
  document.getElementById('error-message').style.display = 'none';
+ const toggleSpinner = displayStyle =>{
+    document.getElementById('spinner').style.display = displayStyle;
+}
+ const toggleResult = displayStyle =>{
+    document.getElementById('search-result').style.display = displayStyle;
+}
+ 
  const searchBooks = () => {
      const searchField = document.getElementById('search-field');
      const searchText = searchField.value;
 
      // console.log(searchText);
+    //  const toggleSpinner = displayStyle =>{
+    //     document.getElementById('spinner').style.display = displayStyle;
+    // }
      
      document.getElementById('error-message').style.display = 'none';
      const url = `https://openlibrary.org/search.json?q=${searchText}`;
@@ -20,10 +30,14 @@
              .then(data => displayResult(data.docs))
      }
      searchField.value = '';
+     toggleSpinner('block');
+      toggleResult('none');
+    
  }
  const displayError = error => {
      document.getElementById('error-message').style.display = 'block';
  }
+ 
  const displayResult = docs => {
      console.log(docs);
 
@@ -52,5 +66,9 @@
           </div>
         `;
          searchResult.appendChild(div);
+         
      });
+     toggleSpinner('none');
+      toggleResult('flex');
+     
  }
